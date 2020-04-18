@@ -1,4 +1,4 @@
 env:
-  VLC_ANDROID_VERSION: "3.0.13"
+  VLC_ANDROID_VERSION: "3.2.11"
 before_install:
   - ./prepare-aar

@@ -1,8 +1,8 @@
 # VLC-ANDROID-SDK
 
-[![Build Status](https://travis-ci.com/Stremio/vlc-android-sdk.svg?branch=master)](https://travis-ci.com/Stremio/vlc-android-sdk)
+[![Build Status](https://travis-ci.com/maximilize/vlc-android-sdk.svg?branch=master)](https://travis-ci.com/maximilize/vlc-android-sdk)
 
-### libvlc for android based on VLC-Android 3.0.13
+### libvlc for android based on VLC-Android 3.2.11
 
 # Setup
 
@@ -21,6 +21,6 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.stremio:vlc-android-sdk:4.0.3'
+    implementation 'com.github.maximilize:vlc-android-sdk:4.1.0'
 }
 ```

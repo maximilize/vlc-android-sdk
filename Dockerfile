@@ -1,4 +1,4 @@
-FROM debian:stretch-20190506
+FROM debian:stretch
 
 ENV USERNAME="ci"
 ENV ANDROID_SDK=/home/"$USERNAME"/android-sdk

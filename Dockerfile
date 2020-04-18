@@ -5,12 +5,10 @@ ENV ANDROID_SDK=/home/"$USERNAME"/android-sdk
 ENV ANDROID_NDK=/home/"$USERNAME"/android-ndk
 
 RUN apt-get update && \
-    apt-get install --no-install-suggests --no-install-recommends -y \
-    openjdk-8-jdk-headless ca-certificates autoconf m4 automake ant autopoint bison \
-    flex build-essential libtool libtool-bin patch pkg-config ragel subversion \
-    git rpm2cpio libwebkitgtk-1.0-0 yasm ragel g++ protobuf-compiler gettext \
-    libgsm1-dev wget expect unzip zip python python3 locales libltdl-dev cmake && \
-    automake && \
+    apt-get install -y \
+    automake ant autopoint cmake build-essential libtool-bin \
+    patch pkg-config protobuf-compiler ragel subversion unzip git \
+    openjdk-8-jre openjdk-8-jdk flex python wget && \
     apt-get clean -y && rm -rf /var/lib/apt/lists/* && \
     addgroup --quiet "$USERNAME" && \
     adduser --quiet --disabled-password -gecos "" --ingroup "$USERNAME" "$USERNAME" && \

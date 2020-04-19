@@ -1,4 +1,10 @@
+jdk:
+  - openjdk8
 env:
   VLC_ANDROID_VERSION: "3.2.11"
+  RELEASE_VERSION: "4.1.4"
 before_install:
   - ./prepare-aar
+install:
+  - echo "Running a custom install command"
+  - ./gradlew tasks --all --refresh-dependencies

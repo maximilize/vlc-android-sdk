@@ -7,9 +7,9 @@ then
     exit 1
 fi
 
-if [[ ! "$VERSION" =~ ^[0-9\.]+$ ]]
+if [[ ! "$RELEASE_VERSION" =~ ^[0-9\.]+$ ]]
 then
-    echo "Skip building for vlc-android-sdk: $VERSION"
+    echo "Skip building for vlc-android-sdk: $RELEASE_VERSION"
     exit 1
 fi
 
@@ -48,7 +48,7 @@ mkdir -p "$JNILIBS_DIR"
 mkdir -p "$JAVA_DIR"
 for ARCHITECTURE in armeabi-v7a arm64-v8a x86_64 x86
 do
-    wget https://github.com/maximilize/vlc-android-sdk/releases/download/"$VERSION"-"$ARCHITECTURE"/libvlc-"$ARCHITECTURE"-jni.zip
+    wget https://github.com/maximilize/vlc-android-sdk/releases/download/"$RELEASE_VERSION"-"$ARCHITECTURE"/libvlc-"$ARCHITECTURE"-jni.zip
     unzip libvlc-"$ARCHITECTURE"-jni.zip
     rm -f libvlc-"$ARCHITECTURE"-jni.zip
     cp -r libvlc-jni/* "$JNILIBS_DIR"

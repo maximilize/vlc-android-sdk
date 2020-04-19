@@ -43,9 +43,11 @@ chmod a+x gradlew
 SRC_MAIN_DIR="src/main"
 JNILIBS_DIR="$SRC_MAIN_DIR"/jniLibs
 JAVA_DIR="$SRC_MAIN_DIR"/java
+RES_DIR="$SRC_MAIN_DIR"/res
 mkdir -p "$SRC_MAIN_DIR"
 mkdir -p "$JNILIBS_DIR"
 mkdir -p "$JAVA_DIR"
+mkdir -p "$RES_DIR"
 for ARCHITECTURE in armeabi-v7a arm64-v8a x86_64 x86
 do
     wget https://github.com/maximilize/vlc-android-sdk/releases/download/"$RELEASE_VERSION"-"$ARCHITECTURE"/libvlc-"$ARCHITECTURE"-jni.zip
@@ -56,7 +58,6 @@ do
 done
 git clone "https://code.videolan.org/videolan/vlc-android.git" -b "$VLC_ANDROID_VERSION" vlc-android
 cp vlc-android/libvlc/AndroidManifest.xml "$SRC_MAIN_DIR"
-cp -r vlc-android/libvlc/src/ "$JAVA_DIR"
-mv "$JAVA_DIR"/src/* "$JAVA_DIR"
-rm -rf "$JAVA_DIR"/src
+cp -r vlc-android/libvlc/src/* "$JAVA_DIR/"
+cp -r vlc-android/libvlc/res/* "$RES_DIR/"
 rm -rf vlc-android

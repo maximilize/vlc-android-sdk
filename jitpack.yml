@@ -3,5 +3,3 @@ env:
   RELEASE_VERSION: "4.1.5"
 before_install:
   - ./prepare-aar
-install:
-  - ./gradlew tasks --all --refresh-dependencies

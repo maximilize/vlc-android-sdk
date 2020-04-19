@@ -28,17 +28,17 @@ rm -rf android-ndk-r18b
 cd "$PROJECT_DIR"
 echo "ndk.dir=$ANDROID_NDK" > local.properties
 echo "sdk.dir=$ANDROID_SDK" >> local.properties
-wget https://services.gradle.org/distributions/gradle-4.1-bin.zip
-GRADLE_SHA256=d55dfa9cfb5a3da86a1c9e75bb0b9507f9a8c8c100793ccec7beb6e259f9ed43
-echo "$GRADLE_SHA256" gradle-4.1-bin.zip | sha256sum -c
-unzip gradle-4.1-bin.zip
-rm -f gradle-4.1-bin.zip
-cd gradle-4.1
+wget https://services.gradle.org/distributions/gradle-4.6-bin.zip
+GRADLE_SHA256=98bd5fd2b30e070517e03c51cbb32beee3e2ee1a84003a5a5d748996d4b1b915
+echo "$GRADLE_SHA256" gradle-4.6-bin.zip | sha256sum -c
+unzip gradle-4.6-bin.zip
+rm -f gradle-4.6-bin.zip
+cd gradle-4.6
 ./bin/gradle --offline wrapper
 cd "$PROJECT_DIR"
 mkdir gradle
-mv gradle-4.1/gradle/wrapper/ gradle
-mv gradle-4.1/gradlew .
+mv gradle-4.6/gradle/wrapper/ gradle
+mv gradle-4.6/gradlew .
 chmod a+x gradlew
 SRC_MAIN_DIR="src/main"
 JNILIBS_DIR="$SRC_MAIN_DIR"/jniLibs

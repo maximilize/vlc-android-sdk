@@ -21,6 +21,6 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.maximilize:vlc-android-sdk:4.1.0'
+    implementation 'com.github.maximilize:vlc-android-sdk:4.1.5'
 }
 ```
